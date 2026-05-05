@@ -307,3 +307,120 @@ footer {
   section { padding: 3rem 1.5rem; }
   .about-hero { padding: 3rem 1.5rem 2rem; }
 }
+
+/* AWS ARCHITECTURE DIAGRAM */
+.hero-diagram {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.7s;
+}
+
+.diagram-label-top {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.diagram-nodes {
+  display: flex;
+  align-items: center;
+}
+
+.diagram-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  width: 100px;
+  transition: border-color 0.2s, transform 0.2s;
+  cursor: default;
+}
+.diagram-node:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.node-icon { font-size: 1.6rem; }
+.node-name { font-size: 0.72rem; font-weight: 500; text-align: center; color: var(--text); }
+.node-tag {
+  font-size: 0.6rem;
+  color: var(--accent);
+  background: rgba(200,169,110,0.1);
+  border-radius: 100px;
+  padding: 0.15rem 0.5rem;
+  letter-spacing: 0.04em;
+}
+
+.diagram-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0 0.25rem;
+}
+
+.arrow-line {
+  width: 48px;
+  height: 2px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.arrow-pulse {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: flow 1.8s linear infinite;
+}
+
+.arrow-head {
+  font-size: 0.55rem;
+  color: var(--accent);
+  margin-top: -0.15rem;
+}
+
+.arrow-label {
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  order: -1;
+}
+
+.diagram-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  max-width: 320px;
+  margin-top: 0.25rem;
+}
+
+.file-chip {
+  font-size: 0.65rem;
+  font-family: 'Courier New', monospace;
+  color: var(--accent);
+  background: rgba(200,169,110,0.08);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.2rem 0.55rem;
+  letter-spacing: 0.02em;
+}
+
+@keyframes flow {
+  from { left: -60%; }
+  to { left: 110%; }
+}
