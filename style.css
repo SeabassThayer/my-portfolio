@@ -1,16 +1,24 @@
+/* ================================================
+   GLOBAL STYLES & CSS VARIABLES
+   Dark theme color palette with gold accents
+   ================================================ */
+
+/* Reset all default margins and padding */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Color scheme - accessible from anywhere via var(--name) */
 :root {
-  --dark: #0f0f0f;
-  --dark2: #1a1a1a;
-  --dark3: #242424;
-  --accent: #c8a96e;
-  --accent2: #e8c98e;
-  --text: #f0ede8;
-  --muted: #888;
-  --border: rgba(200,169,110,0.2);
+  --dark: #0f0f0f;          /* Main background */
+  --dark2: #1a1a1a;         /* Secondary background */
+  --dark3: #242424;         /* Tertiary background */
+  --accent: #c8a96e;        /* Primary gold accent */
+  --accent2: #e8c98e;       /* Secondary gold accent */
+  --text: #f0ede8;          /* Primary text color */
+  --muted: #888;            /* Muted/secondary text */
+  --border: rgba(200,169,110,0.2); /* Transparent border */
 }
 
+/* Main body styles - applied to entire page */
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--dark);
@@ -18,37 +26,45 @@ body {
   line-height: 1.7;
 }
 
+/* NAVIGATION BAR - sticky header */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.25rem 4rem;
   border-bottom: 1px solid var(--border);
-  position: sticky;
+  position: sticky; /* Stays at top when scrolling */
   top: 0;
-  background: rgba(15,15,15,0.95);
-  backdrop-filter: blur(8px);
-  z-index: 100;
+  background: rgba(15,15,15,0.95); /* Semi-transparent */
+  backdrop-filter: blur(8px); /* Blur effect behind nav */
+  z-index: 100; /* Above other content */
 }
 
+/* Navigation logo */
 .nav-name {
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   color: var(--accent);
 }
 
+/* Navigation links container */
 .nav-links { display: flex; gap: 2rem; }
+
+/* Individual navigation links */
 .nav-links a {
   text-decoration: none;
   color: var(--muted);
   font-size: 0.9rem;
   letter-spacing: 0.05em;
-  transition: color 0.2s;
+  transition: color 0.2s; /* Smooth color transition */
 }
+
+/* Hover and active link states */
 .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
+/* HERO SECTION - main landing area */
 .hero {
-  min-height: 90vh;
+  min-height: 90vh; /* Full viewport height */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,6 +74,7 @@ nav {
   overflow: hidden;
 }
 
+/* Decorative background gradient circle */
 .hero::before {
   content: '';
   position: absolute;
@@ -66,9 +83,10 @@ nav {
   width: 600px;
   height: 600px;
   background: radial-gradient(circle, rgba(200,169,110,0.06) 0%, transparent 70%);
-  pointer-events: none;
+  pointer-events: none; /* Don't interfere with clicks */
 }
 
+/* Hero text content container */
 .hero-content { max-width: 560px; }
 
 .hero-tag {
