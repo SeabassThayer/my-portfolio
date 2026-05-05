@@ -424,3 +424,34 @@ footer {
   from { left: -60%; }
   to { left: 110%; }
 }
+
+/* HERO PHOTO */
+.hero-photo {
+  flex-shrink: 0;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.7s;
+}
+
+.hero-photo img {
+  width: 300px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* ABOUT PHOTO */
+.about-photo {
+  margin: 0 auto 1.5rem;
+}
+
+.about-photo img {
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+  margin: 0 auto;
+}
